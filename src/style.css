@@ -1,0 +1,40 @@
+body {
+  background-image: url(clouds.jpg);
+  background-size: cover;
+}
+button {
+  margin: 15px;
+}
+
+.top {
+  background-color: hsl(208, 100%, 97%, 0.5);
+  border-radius: 10px;
+  margin: 60px auto;
+  padding: 20px;
+}
+.top-left {
+  margin: auto;
+  padding-left: 35px;
+}
+.top-middle {
+  text-align: center;
+  margin: auto;
+  font-size: 30px;
+}
+.top-right {
+  text-align: center;
+  margin: auto;
+}
+
+.middle {
+  background-color: hsl(208, 100%, 97%, 0.5);
+
+  border-radius: 10px;
+  font-size: 30px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.description {
+  font-size: 25px;
+}
