@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <title>Weather</title>
-    <link rel="stylesheet" href="src/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -36,18 +35,18 @@
           </div>
         </div>
         <div class="col top-right">
-          <span class="temp"> <span id="current-temp"></span>°</span>
-          <a href="" class="unit">C</a>
-          <br />
-          <p class="details">
-            <span class="description" id="current-description"
-              >Mostly Sunny</span
-            >
-            <br />
-            Humidity: <span id="humidity">10</span>%
-            <br />
-            Wind: <span id="wind">5</span>km/h
-          </p>
+          <ul>
+            <li>
+              <span class="temp"> <span id="current-temp"></span>°</span>
+              <a href="" class="unit">C</a>
+            </li>
+
+            <li><span class="description" id="current-description"></span></li>
+
+            <li>Humidity: <span id="humidity">10</span>%</li>
+
+            <li>Wind: <span id="wind">5</span>km/h</li>
+          </ul>
         </div>
       </div>
     </div>
