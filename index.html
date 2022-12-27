@@ -19,33 +19,30 @@
     <div class="container top">
       <div class="row">
         <div class="col-4 top-left">
-          
           <div class="search-bar">
             <form id="search-form">
               <input type="text" placeholder="city" id="city-input" />
               <input type="submit" value="search" />
             </form>
           </div>
-           <button  type="button" class="btn btn-primary">Current Location</button>
+          <button type="button" class="btn btn-primary">
+            Current Location
+          </button>
         </div>
         <div class="col top-middle">
           <h1 id="city"></h1>
-          <p>
-            🌤️ <span id="current-temp"></span>°
-            <a href="" id="celcius-farenheit">C</a>
-            
-          </p>
+          <div class="place-time">
+            <h3><span id="date-time"></span><span id="am-pm">am</span></h3>
+          </div>
         </div>
         <div class="col top-right">
+          <span class="temp"> <span id="current-temp"></span>°</span>
+          <a href="" class="unit">C</a>
+          <br />
           <p class="details">
-            <div class="place-time">
-                       
-            <h3>
-              <span id="date-time"></span
-              ><span id="am-pm">am</span>
-            </h3>
-          </div>
-          <span class = "description" id="current-description">Mostly Sunny</span>
+            <span class="description" id="current-description"
+              >Mostly Sunny</span
+            >
             <br />
             Humidity: <span id="humidity">10</span>%
             <br />
@@ -54,8 +51,11 @@
         </div>
       </div>
     </div>
-    <div >
-    <p class="coded-by">coded by <a href="https://github.com/sesameng?tab=repositories">Samantha Eng</a></p>
+    <div>
+      <p class="coded-by">
+        coded by
+        <a href="https://github.com/sesameng?tab=repositories">Samantha Eng</a>
+      </p>
     </div>
 
     <script src="src/script.js"></script>

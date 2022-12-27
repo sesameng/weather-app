@@ -29,7 +29,6 @@ button {
 
 .middle {
   background-color: hsl(208, 100%, 97%, 0.5);
-
   border-radius: 10px;
   font-size: 30px;
   padding: 20px;
@@ -37,8 +36,16 @@ button {
   text-align: center;
 }
 .description {
+  margin-top: 0px;
   font-size: 25px;
 }
 .coded-by {
   text-align: center;
+}
+.temp {
+  font-size: 40px;
+}
+.unit {
+  position: relative;
+  top: -10px;
 }
