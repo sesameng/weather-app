@@ -9,7 +9,7 @@ button {
 .top {
   background-color: hsl(208, 100%, 97%, 0.5);
   border-radius: 10px;
-  margin: 60px auto;
+  margin: 80px auto;
   padding: 20px;
 }
 .top-left {
@@ -37,4 +37,7 @@ button {
 }
 .description {
   font-size: 25px;
+}
+.coded-by {
+  text-align: center;
 }
