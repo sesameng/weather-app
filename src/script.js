@@ -48,7 +48,7 @@ function showWeather(response) {
   displayWindspeed.innerHTML = Math.round(response.data.wind.speed);
 }
 
-function changeCity(event) {
+function searchCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
   let searchCity = document.querySelector("#city");
@@ -71,7 +71,7 @@ function currentCity() {
 }
 
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", changeCity);
+form.addEventListener("submit", searchCity);
 
 let button = document.querySelector("button");
 button.addEventListener("click", currentCity);
