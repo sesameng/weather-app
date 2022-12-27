@@ -38,18 +38,14 @@ function defaultWeather(city) {
 function showWeather(response) {
   console.log(response);
   document.querySelector("#city").innerHTML = response.data.name;
-  let temperature = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = temperature;
-  let description = response.data.weather[0].description;
+  currentTemp.innerHTML = Math.round(response.data.main.temp);
   let currentDescription = document.querySelector("#current-description");
-  currentDescription.innerHTML = description;
-  let humidity = Math.round(response.data.main.humidity);
+  currentDescription.innerHTML = response.data.weather[0].description;
   let displayHumidity = document.querySelector("#humidity");
-  displayHumidity.innerHTML = humidity;
-  let windSpeed = Math.round(response.data.wind.speed);
+  displayHumidity.innerHTML = Math.round(response.data.main.humidity);
   let displayWindspeed = document.querySelector("#wind");
-  displayWindspeed.innerHTML = windSpeed;
+  displayWindspeed.innerHTML = Math.round(response.data.wind.speed);
 }
 
 function changeCity(event) {
