@@ -39,18 +39,20 @@ function showWeather(response) {
   console.log(response);
   document.querySelector("#city").innerHTML = response.data.name;
   let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = Math.round(response.data.main.temp);
   let currentDescription = document.querySelector("#current-description");
-  currentDescription.innerHTML = response.data.weather[0].description;
   let displayHumidity = document.querySelector("#humidity");
-  displayHumidity.innerHTML = Math.round(response.data.main.humidity);
   let displayWindspeed = document.querySelector("#wind");
-  displayWindspeed.innerHTML = Math.round(response.data.wind.speed);
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  celciusTemp = response.data.main.temp;
+  currentTemp.innerHTML = Math.round(response.data.main.temp);
+  currentDescription.innerHTML = response.data.weather[0].description;
+  displayHumidity.innerHTML = Math.round(response.data.main.humidity);
+  displayWindspeed.innerHTML = Math.round(response.data.wind.speed);
 }
 
 function searchCity(event) {
@@ -74,6 +76,18 @@ function currentCity() {
   }
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
+
+function displayFarenheit(event) {
+  event.preventDefault();
+  let currentTemp = document.querySelector("#current-temp");
+  let farenheitTemp = (celciusTemp * 9) / 5 + 32;
+  currentTemp.innerHTML = Math.round(farenheitTemp);
+}
+
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", displayFarenheit);
+
+let celciusTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
