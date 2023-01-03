@@ -3,9 +3,5 @@
 # replace dummy content with real data
 
 
-INJECT HTML TO JS
--add ID to HTML
--create JS function DisplayForecast
-    -select element to change
--call it in DisplayWeather function
--
+-create a new array called days
+-use a for loop to loop through array and create new column for each day

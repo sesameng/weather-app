@@ -79,16 +79,23 @@ function showWeather(response) {
 
 function displayForecast() {
   let forecastElement = document.querySelector("#weather-forecast");
-  forecastElement.innerHTML = `<div class="row">
-      <div class="col">
-        <div class="forecast-day">Friday</div>
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+        <div class="forecast-day">${day}</div>
         <img
           src="http://openweathermap.org/img/wn/04n@2x.png"
           alt="description-icon"
         />
         <div class="forecast-temps">18° 12°</div>
-      </div>
-    </div>`;
+      </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function displayFarenheit(event) {
