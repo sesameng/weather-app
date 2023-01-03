@@ -31,7 +31,7 @@ function currentDayTime() {
 
 function defaultWeather(city) {
   let apiKey = "3efd1e97a559110d8a41f701f85fefbb";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(showWeather);
 }
 
@@ -40,7 +40,7 @@ function currentCity() {
     let apiKey = "3efd1e97a559110d8a41f701f85fefbb";
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
-    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
     axios.get(url).then(showWeather);
   }
   navigator.geolocation.getCurrentPosition(retrievePosition);
@@ -53,7 +53,7 @@ function searchCity(event) {
   searchCity.innerHTML = cityInput.value;
   let city = cityInput.value;
   let apiKey = "3efd1e97a559110d8a41f701f85fefbb";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(showWeather);
 }
 
@@ -82,7 +82,7 @@ function showWeather(response) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "a240bf37178036abd7300o5fdt59caea";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
   console.log(apiUrl);
 }
