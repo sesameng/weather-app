@@ -44,6 +44,9 @@ a:link {
 .forecast-min {
   font-weight: lighter;
 }
+.forecast-desc {
+  font-size: 15px;
+}
 .description {
   margin-top: 0px;
   font-size: 25px;

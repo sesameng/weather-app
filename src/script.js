@@ -109,6 +109,7 @@ function displayForecast(response) {
         <img
           src="${forecastDay.condition.icon_url}";
         />
+        <div class= "forecast-desc">${forecastDay.condition.description}</div>
         <div class="forecast-temps">
         <span class="forecast-max" id="forecast-max">
         ${Math.round(forecastDay.temperature.maximum)}</span>° 
@@ -119,7 +120,6 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
