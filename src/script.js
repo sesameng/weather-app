@@ -75,9 +75,20 @@ function showWeather(response) {
   currentDescription.innerHTML = response.data.weather[0].description;
   displayHumidity.innerHTML = Math.round(response.data.main.humidity);
   displayWindspeed.innerHTML = Math.round(response.data.wind.speed);
+
+  getForecast(response.data.coord);
 }
 
-function displayForecast() {
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "a240bf37178036abd7300o5fdt59caea";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+  console.log(apiUrl);
+}
+
+function displayForecast(response) {
+  console.log(response);
   let forecastElement = document.querySelector("#weather-forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -127,4 +138,3 @@ button.addEventListener("click", currentCity);
 
 currentDayTime();
 defaultWeather("New York");
-displayForecast();
