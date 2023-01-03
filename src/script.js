@@ -120,26 +120,6 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function displayFarenheit(event) {
-  event.preventDefault();
-  let currentTemp = document.querySelector("#current-temp");
-  let farenheitTemp = (celciusTemp * 9) / 5 + 32;
-  currentTemp.innerHTML = Math.round(farenheitTemp);
-}
-
-function displayCelcius(event) {
-  event.preventDefault();
-  let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = Math.round(celciusTemp);
-}
-
-let farenheitLink = document.querySelector("#farenheit-link");
-farenheitLink.addEventListener("click", displayFarenheit);
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", displayCelcius);
-
-let celciusTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
