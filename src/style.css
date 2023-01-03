@@ -12,7 +12,7 @@ a:link {
   text-decoration: none;
 }
 .top {
-  background-color: hsl(208, 100%, 97%, 0.5);
+  background-color: hsl(208, 100%, 97%, 0.4);
   border-radius: 10px;
   margin: 80px auto;
   padding: 20px;
@@ -32,12 +32,13 @@ a:link {
   margin: auto;
 }
 
-.middle {
-  background-color: hsl(208, 100%, 97%, 0.5);
+.forecast {
+  background-color: hsl(208, 100%, 97%, 0.4);
   border-radius: 10px;
   font-size: 30px;
   padding: 20px;
   margin-bottom: 20px;
+  max-width: 900px;
   text-align: center;
 }
 .description {

@@ -1,0 +1,11 @@
+# To add HTML and CSS for forecast
+# To add the API call to get forecast
+# replace dummy content with real data
+
+
+INJECT HTML TO JS
+-add ID to HTML
+-create JS function DisplayForecast
+    -select element to change
+-call it in DisplayWeather function
+-

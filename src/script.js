@@ -24,12 +24,34 @@ function currentDayTime() {
   dateTime.innerHTML = `${day} ${time}`;
 
   let toggleAmPm = document.querySelector("#am-pm");
-  if (now.getHours() > 12) {
+  if (now.getHours() >= 12) {
     toggleAmPm.innerHTML = "pm";
   }
 }
 
 function defaultWeather(city) {
+  let apiKey = "3efd1e97a559110d8a41f701f85fefbb";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
+
+function currentCity() {
+  function retrievePosition(position) {
+    let apiKey = "3efd1e97a559110d8a41f701f85fefbb";
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+    axios.get(url).then(showWeather);
+  }
+  navigator.geolocation.getCurrentPosition(retrievePosition);
+}
+
+function searchCity(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  let searchCity = document.querySelector("#city");
+  searchCity.innerHTML = cityInput.value;
+  let city = cityInput.value;
   let apiKey = "3efd1e97a559110d8a41f701f85fefbb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
@@ -55,26 +77,18 @@ function showWeather(response) {
   displayWindspeed.innerHTML = Math.round(response.data.wind.speed);
 }
 
-function searchCity(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("#city-input");
-  let searchCity = document.querySelector("#city");
-  searchCity.innerHTML = cityInput.value;
-  let city = cityInput.value;
-  let apiKey = "3efd1e97a559110d8a41f701f85fefbb";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showWeather);
-}
-
-function currentCity() {
-  function retrievePosition(position) {
-    let apiKey = "3efd1e97a559110d8a41f701f85fefbb";
-    let lat = position.coords.latitude;
-    let lon = position.coords.longitude;
-    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-    axios.get(url).then(showWeather);
-  }
-  navigator.geolocation.getCurrentPosition(retrievePosition);
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  forecastElement.innerHTML = `<div class="row">
+      <div class="col">
+        <div class="forecast-day">Friday</div>
+        <img
+          src="http://openweathermap.org/img/wn/04n@2x.png"
+          alt="description-icon"
+        />
+        <div class="forecast-temps">18° 12°</div>
+      </div>
+    </div>`;
 }
 
 function displayFarenheit(event) {
@@ -106,3 +120,4 @@ button.addEventListener("click", currentCity);
 
 currentDayTime();
 defaultWeather("New York");
+displayForecast();
