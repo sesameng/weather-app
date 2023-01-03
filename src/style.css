@@ -41,6 +41,9 @@ a:link {
   max-width: 900px;
   text-align: center;
 }
+.forecast-min {
+  font-weight: lighter;
+}
 .description {
   margin-top: 0px;
   font-size: 25px;
